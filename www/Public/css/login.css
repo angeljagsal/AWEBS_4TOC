@@ -1,0 +1,88 @@
+:root {
+    --bg-color: #f7f7ff;
+    --txt-color: #ffb646;
+    --sbt-color: #828282;
+    --grayt-color: #cdcdcd;
+    --sq-txt-color: #ffffff;
+    --shadow-color: #888888;
+    --gradient-color: linear-gradient(to right, #ff9a19, #ffb85e); width: 100%; height: 200px; 
+    --login-color: green;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+}
+
+.col {
+    display: flex;
+    align-items: center;
+    padding-right: 0;
+    max-width: fit-content;
+}
+.person {
+    color: var(--grayt-color);
+    padding-top: 50px;
+    font-size: 120px;
+}
+.txt {
+    text-align: center;
+    .h3 {
+        font-size: 200px;
+        font-weight: bold;
+    }
+}
+.fp1{
+    margin-top: 30px !important;
+}
+
+.fp1, .fp2 {
+    width: 250px;
+    padding: 10px;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    input {
+        border: 0;
+        outline: none;
+        color: black;
+        border-color: var(--bg-color);
+        background-color: var(--bg-color);
+    }
+    &:hover {
+        color: var(--login-color);
+        box-shadow: 0 0 5px 3px lightgrey;
+        ::placeholder {
+            color: var(--login-color);
+        }
+    }
+}
+.p {
+    color: var(--login-color);
+    margin-top: 20px;
+    font-size: 75%;
+    font-weight: normal;
+    text-align: end;
+}
+.p2 {
+    margin-top: 20px;
+    font-size: 85%;
+    font-weight: normal;
+    text-align: center;
+    .spanGreen {
+        color: var(--login-color);
+    }
+}
+.logBtn button {
+    color: white;
+    font-weight: bold;
+    margin-top: 75px;
+    width: 260px;
+    height: 50px;
+    &:hover {
+        color: white;
+        box-shadow: 0 0 5px 3px lightgrey;
+    }
+}
