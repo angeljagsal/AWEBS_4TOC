@@ -6,9 +6,11 @@
     --bg-color: #f7f7ff;
     --txt-color: #ffb646;
     --sbt-color: #828282;
+    --grayt-color: #cdcdcd;
     --sq-txt-color: #ffffff;
     --shadow-color: #888888;
     --gradient-color: linear-gradient(to right, #ff9a19, #ffb85e); width: 100%; height: 200px; 
+    --logReg-color: green;
 }
 
 body {
@@ -65,4 +67,9 @@ body {
 .col.icon {
     color: var(--sbt-color);
     font-size: 30px;
+    padding-left: 165px;
+}
+.tKnow {
+    text-align: start;
+    padding-left: 12px;
 }

@@ -1,0 +1,67 @@
+.left {
+    font-size: 25px;
+    padding-left: 15px;
+    padding-top: 10px;
+    color: var(--logReg-color);
+}
+
+.txtReg {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 35px;
+    p {
+        font-weight: 500;
+        color: var(--sbt-color);
+    }
+}
+
+.forms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+.fp10 {
+    margin-top: 30px !important;
+}
+
+.fp10, .fp11, .fp12 {
+    width: 250px;
+    padding: 10px;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    input {
+        border: 0;
+        outline: none;
+        color: black;
+        border-color: var(--bg-color);
+        background-color: var(--bg-color);
+    }
+    &:hover {
+        color: var(--logReg-color);
+        box-shadow: 0 0 5px 3px lightgrey;
+        ::placeholder {
+            color: var(--logReg-color);
+        }
+    }
+}
+
+.regBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    button {
+        color: white;
+        font-weight: bold;
+        margin-top: 75px;
+        width: 260px;
+        height: 50px;
+        &:hover {
+            color: white;
+            box-shadow: 0 0 5px 3px lightgrey;
+        }
+    }
+}
