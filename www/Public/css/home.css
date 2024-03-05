@@ -34,6 +34,7 @@ body {
         color: var(--txt-color);
     }
     p {
+        margin-bottom: 35px;
         font-style: italic;
         color: var(--sbt-color);
     }
@@ -65,6 +66,7 @@ body {
 }
 
 .col.icon {
+    cursor: pointer;
     color: var(--sbt-color);
     font-size: 30px;
     padding-left: 165px;
