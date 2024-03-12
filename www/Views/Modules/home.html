@@ -4,7 +4,9 @@
             <h1><strong>Welcome!</strong></h1>
         </div>
         <div class="col icon text-end">
-            <i class="bi bi-person-circle pe-4"></i>
+            <a class="goUser">
+                <i class="bi bi-person-circle pe-4"></i>
+            </a>
         </div>
     </div>
     <p class="tKnow">Test Your Knowledge</p>
@@ -28,3 +30,9 @@
 
     </div>
 </div>
+
+<script>
+    document.querySelector('.goUser').addEventListener('click', function() {
+        LoadPartialView('Modules/login', document.querySelector('.app'))
+    })
+</script>
