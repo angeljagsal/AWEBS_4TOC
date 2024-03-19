@@ -66,10 +66,12 @@ body {
 }
 
 .col.icon {
-    cursor: pointer;
     color: var(--sbt-color);
     font-size: 30px;
-    padding-left: 165px;
+    padding-left: 180px;
+    .goUser {
+        cursor: pointer;
+    }
 }
 .tKnow {
     text-align: start;
