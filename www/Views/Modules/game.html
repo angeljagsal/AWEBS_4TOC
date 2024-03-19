@@ -1,0 +1,35 @@
+<div class="container">
+   <div class="rectangle">
+       <h1>Category</h1>
+    </div>
+</div>
+<div class="goHome">
+    <i class="bi bi-arrow-left"></i>
+</div>
+
+<div class="container">
+    <div class="question">
+        <h2>Question</h2>
+    </div>
+</div>
+
+<div class="container">
+    <div class="answers">
+        <button class="btn btn-primary">Answer 1</button>
+        <button class="btn btn-primary">Answer 2</button>
+        <button class="btn btn-primary">Answer 3</button>
+        <button class="btn btn-primary">Answer 4</button>
+    </div>
+
+    <div class="coins">
+        <h3>Coins: 0</h3>
+    </div>
+
+    <button class="submit">Submit</button>
+</div>
+
+<script>
+    document.querySelector('.goHome').addEventListener('click', function() {
+        LoadPartialView('/home', document.querySelector('.app'))
+    })
+</script>
