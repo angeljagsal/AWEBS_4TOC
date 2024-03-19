@@ -40,3 +40,22 @@ function onDeviceReady() {
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
     document.getElementById('deviceready').classList.add('ready');
 }
+
+function saveLocalStorageValue(name, value) {
+    // Para almacenar utilizaremos el método "setItem"
+    // pasándole como parámetros la clave y el valor a almacenar:
+    window.localStorage.setItem(name, value);
+    return console.log(name + " guardado exitosamente.")
+}
+
+function getLocalStorageValue(name) {
+    //Para recuperar un valor utilizamos el método "getItem"
+    //pasándole como parámetro la clave del valor deseado:
+    return window.localStorage.getItem(name);
+}
+
+function removeLocalStorageValue(name) {
+    // Y para borrar el método removeItem y la clave:
+    window.localStorage.removeItem(name);
+    return console.log(name + " eliminado exitosamente.")
+}
