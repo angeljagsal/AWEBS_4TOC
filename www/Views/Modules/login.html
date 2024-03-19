@@ -23,7 +23,7 @@
                     <i class="bi bi-envelope"></i>
                 </div>
                 <div class="col">
-                    <input type="email" name="email" id="email" placeholder="Email">
+                    <input type="email" name="email" id="user-email" placeholder="Email">
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
                     <i class="bi bi-shield-lock"></i>
                 </div>
                 <div class="col">
-                    <input type="password" name="pass" id="pass" placeholder="Password">
+                    <input type="password" name="password" id="user-password" placeholder="Password">
                 </div>
             </div>
         </div>
@@ -44,19 +44,33 @@
 
     <!-- LOGIN BUTTON -->
     <div class="logBtn">
-        <button type="button" class="btn btn-success">LOGIN</button>
+        <button type="button" class="btn-login-form btn btn-success">LOGIN</button>
         <p class="p2">Don't have account? <span class="spanGreen"> Create an account</span></p>
     </div>
 
 </div>
 
 <script>
-    document.querySelector('.spanGreen').addEventListener('click', function() {
-        LoadPartialView('/register', document.querySelector('.app'))
-    })
+    document.querySelector('.btn-login-form').addEventListener('click', function () {
+        var userEmail = $('#user-email').val();
+        var userPassword = $('#user-password').val();
+        var userType = $('#user-type').val();
+
+        var formData = {
+            email: userEmail,
+            password: userPassword,
+            type: userType
+        };
+
+        login(formData);
+    });
 </script>
 
 <script>
+    document.querySelector('.spanGreen').addEventListener('click', function() {
+        LoadPartialView('/register', document.querySelector('.app'))
+    })
+
     document.querySelector('.goHome').addEventListener('click', function() {
         LoadPartialView('/home', document.querySelector('.app'))
     })
