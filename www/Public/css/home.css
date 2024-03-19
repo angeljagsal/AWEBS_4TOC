@@ -71,6 +71,7 @@ body {
     padding-left: 180px;
     .goUser {
         cursor: pointer;
+        color: var(--sbt-color);
     }
 }
 .tKnow {
