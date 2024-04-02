@@ -1,0 +1,23 @@
+.avatar {
+    font-size: 4rem;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    background: #555555;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6rem;
+}
+  
+.avatar::after {
+    content: attr(data-label);
+    font-family: "Readex Pro", sans-serif;
+    color: #ffffff;
+}
+
+.user-name {
+    margin-top: 1.5rem;
+    font-size: 18px;
+}
+  

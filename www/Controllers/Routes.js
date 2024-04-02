@@ -7,9 +7,9 @@ const env = local_server; //Select your environment (local or public server)
 
 //Users API
 const loginUser_route = env + "Users/login"
-// const signupUser_route = env + "Users/signup"
+const dataUser_route = env + "Users/"
+const signupUser_route = env + "Users/signup"
 // const editProfileFile_route = env + "Users/putProfileFile/"
 // const allUsers_route = env + "Users"
 // const postUser_route = env + "Users/"
-// const dataUser_route = env + "Users/"
 // const totalUser_route = env + "Users/GetTotalUsers"

@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="avatar" data-label=""> <!-- Iniciales asignadas con JS --> </div>
+    <p class="user-name"> <!-- Nombre asignado con JS --> </p>
+</div>
+
+<script>
+
+    const userName = getLocalStorageValue("name");
+    const userLastname = getLocalStorageValue("last_name");
+
+    const firstLetters = userName.substr(0, 1) + userLastname.substr(0, 1)
+
+    const avatar = document.querySelector(".avatar");
+    avatar.dataset.label = firstLetters;
+
+    const userNameElement = document.querySelector(".user-name")
+    if (userNameElement) {
+    userNameElement.textContent = userName + " " + userLastname;
+    }
+
+</script>
+
+<script>
+    const avatars = document.querySelectorAll(".avatar");
+
+    avatars.forEach((a) => {
+        const charCodeRed = a.dataset.label.charCodeAt(0);
+        const charCodeGreen = a.dataset.label.charCodeAt(1) || charCodeRed;
+
+        const red = Math.pow(charCodeRed, 7) % 200;
+        const green = Math.pow(charCodeGreen, 7) % 200;
+        const blue = (red + green) % 200;
+
+        a.style.background = `rgb(${red}, ${green}, ${blue})`;
+    });
+</script>

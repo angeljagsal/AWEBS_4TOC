@@ -41,12 +41,14 @@
         <script src="Controllers/Routes.js"></script>
         <script src="Controllers/UserControllers.js"></script>
 
+        <script src="Models/User.js"></script>
+
         <link rel="stylesheet" href="Public/css/home.css">
         <link rel="stylesheet" href="Public/css/login.css">
         <link rel="stylesheet" href="Public/css/register.css">
-
-        <link rel="stylesheet" href="Public/css/style.css">
         <link rel="stylesheet" href="Public/css/game.css">
+        <link rel="stylesheet" href="Public/css/user_profile.css">
+        <!-- <link rel="stylesheet" href="Public/css/style.css"> -->
 
         <title>Hello World</title>
     </head>
@@ -57,9 +59,7 @@
         <!-- <script src="cordova.js"></script> -->
         <script src="Public/js/index.js"></script>
         <script>
-
-            LoadPartialView('/game', document.querySelector('.app'))
-
+            LoadPartialView('/home', document.querySelector('.app'))
         </script>
     </body>
 </html>
