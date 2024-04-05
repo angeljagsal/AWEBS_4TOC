@@ -1,7 +1,10 @@
 <div class="container">
    <div class="rectangle">
-        <h1>Category</h1>
-   </div>
+       <h1>Category</h1>
+    </div>
+</div>
+<div class="goHome">
+    <i class="bi bi-arrow-left"></i>
 </div>
 
 <div class="container">
@@ -20,3 +23,9 @@
 
     <button class="submit">Submit</button>
 </div>
+
+<script>
+    document.querySelector('.goHome').addEventListener('click', function() {
+        LoadPartialView('/home', document.querySelector('.app'))
+    })
+</script>
