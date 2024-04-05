@@ -1,12 +1,26 @@
 <div class="container">
+    <div class="row">
+        <div class="col arrowHomeUP">
+            <i class="goHome bi bi-arrow-left"></i>
+        </div>
+        <div class="col coinsUP">
+            <i class="bi bi-coin"></i>
+            <p class="showCoins"></p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
     <div class="avatar" data-label=""> <!-- Iniciales asignadas con JS --> </div>
     <p class="user-name"> <!-- Nombre asignado con JS --> </p>
+    <p class="showCoins"> <!-- Coins mostradas con JS --> </p>
 </div>
 
 <script>
 
     const userName = getLocalStorageValue("name");
     const userLastname = getLocalStorageValue("last_name");
+    const userCoins = getLocalStorageValue("coins")
 
     const firstLetters = userName.substr(0, 1) + userLastname.substr(0, 1)
 
@@ -17,6 +31,8 @@
     if (userNameElement) {
     userNameElement.textContent = userName + " " + userLastname;
     }
+
+    document.querySelector(".showCoins").textContent = userCoins
 
 </script>
 
@@ -33,4 +49,10 @@
 
         a.style.background = `rgb(${red}, ${green}, ${blue})`;
     });
+</script>
+
+<script>
+    document.querySelector('.goHome').addEventListener('click', function() {
+        LoadPartialView('/home', document.querySelector('.app'))
+    })
 </script>

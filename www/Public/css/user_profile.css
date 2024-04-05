@@ -1,3 +1,27 @@
+.arrowHomeUP {
+    padding-left: 0;
+    font-size: 25px;
+    margin-top: 25px;
+    margin-right: 15rem;
+    color: var(--logReg-color);
+    .goHome {
+        cursor: pointer;
+    }
+}
+
+.coinsUP {
+    margin-top: 23px;
+    font-size: 20px;
+    color: var(--logReg-color);
+    .showCoins {
+        margin-top: 15px;
+        margin-left: 4px;
+        color: black;
+        font-size: 18px;
+        font-weight: 400;
+    }
+}
+
 .avatar {
     font-size: 4rem;
     width: 3em;
@@ -7,7 +31,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-top: 6rem;
+    margin-top: 3rem;
 }
   
 .avatar::after {
@@ -19,5 +43,9 @@
 .user-name {
     margin-top: 1.5rem;
     font-size: 18px;
+}
+
+.showCoins {
+    font-weight: 500;
 }
   

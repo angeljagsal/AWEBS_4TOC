@@ -1,0 +1,9 @@
+.arrowHome {
+    font-size: 25px;
+    margin-left: 35px;
+    margin-top: 25px;
+    color: var(--logReg-color);
+    .goHome {
+        cursor: pointer;
+    }
+}

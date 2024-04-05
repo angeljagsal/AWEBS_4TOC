@@ -18,7 +18,7 @@ function login(formData) {
         error: function(jqXHR, textStatus, errorThrown) {
             console.error('Error:', textStatus, errorThrown);
         }
-    });        
+    });
 }
 
 function signup(formData) {
@@ -42,7 +42,7 @@ function signup(formData) {
             console.log(formData)
             console.error('Error:', textStatus, errorThrown);
         }
-    });        
+    });
 }
 
 function getUserData(id, func = null) {
@@ -56,5 +56,5 @@ function getUserData(id, func = null) {
         error: function(jqXHR, textStatus, errorThrown) {
             console.error('Error:', textStatus, errorThrown);
         }
-    });   
+    });
 }
