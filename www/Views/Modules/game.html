@@ -1,35 +1,77 @@
-<div class="container">
-   <div class="rectangle">
-       <h1>Category</h1>
+<div class="container ">
+    <div class="rectangle">
+        <h1>Easy</h1>
+     </div>
+ </div>
+ <div class="goHome">
+     <i class="bi bi-arrow-left"></i>
+ </div>
+ 
+ <div class="container-start">
+    <div class="start-screen">
+      <button class="btn start">Start Quiz</button>
     </div>
-</div>
-<div class="goHome">
-    <i class="bi bi-arrow-left"></i>
-</div>
+ </div>        
 
-<div class="container">
-    <div class="question">
-        <h2>Question</h2>
+ <div class="container">
+    <div class="quiz hide">
+        <div class = "timer">
+            <div class="progress">
+              <div class="progress-bar"></div>
+              <span class="progress-text"></span>
+            </div>
+          </div>
+        <div class="question-wrapper">
+          <div class="number">
+            Question <span class="current">1</span>
+            <span class="total">/10</span>
+          </div>
+          <div class="question"> <h3>This is a question</h3></div>
+        </div>
+        <div class="answer-wrapper">
+          <div class="answer selected">
+            <span class="text">answer</span>
+            <span class="checkbox">
+              <i class="fas fa-check"></i>
+            </span>
+          </div>
+        </div>
+        <button class="btn submit" disabled>Submit</button>
+        <button class="btn next">Next</button>
+      </div>
+
+      <div class="end-screen hide">
+        <div class="score">
+          <span class="score-text">Your Score:</span>
+          <div>
+            <span class="final-score">0</span>
+            <span class="total-score">/10</span>
+          </div>
+        </div>
+        <button class="btn restart">Restart Quiz</button>
+      </div>
     </div>
-</div>
+     </div>
+ 
+     <div class="coins">
+         <h3>Coins: 0</h3>
+     </div>
+ </div>
 
-<div class="container">
-    <div class="answers">
-        <button class="btn btn-primary">Answer 1</button>
-        <button class="btn btn-primary">Answer 2</button>
-        <button class="btn btn-primary">Answer 3</button>
-        <button class="btn btn-primary">Answer 4</button>
-    </div>
+<script src="../../Models/Easy.js"></script>>
 
-    <div class="coins">
-        <h3>Coins: 0</h3>
-    </div>
 
-    <button class="submit">Submit</button>
-</div>
+</body>
+</html>
+
 
 <script>
     document.querySelector('.goHome').addEventListener('click', function() {
         LoadPartialView('/home', document.querySelector('.app'))
+    
+    
     })
-</script>
+    
+    
+
+

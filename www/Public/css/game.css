@@ -4,7 +4,7 @@
 
 .rectangle {
     background-color: rgb(76, 156, 30);;
-    width: 440px;
+    width: auto;
     height: 110px;
     flex-shrink: 0;
     border-bottom-left-radius: 60%;
@@ -32,48 +32,20 @@
 }
 
 .question {
-    margin: 40px 0;
-    width: 40vh;
+    margin: auto;
+    width: auto;
     height: 152px;
     flex-shrink: 0;
     display: flex;
     justify-content: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
     align-items: center;
     border-radius: 16px;
     border: 2.5px solid #000;
-    background: lightgray 50%;
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.50);
-}
-
-.question h2 {
-    color: black;
-    font-family: "Roboto", sans-serif;
-    font-size: 30px;
-    font-weight: 900;
-    opacity: 1;
-}
-
-.answers {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 5px;
-    gap: 17px;
-    flex-direction: column;
-}
-
-.answers button {
-    padding: 0px 20px;
-    width: 40vh;
-    height: 60px;
-    border: none;
-    border-radius: 10px;
-    background-color: rgb(76, 156, 30);
-    color: black;
-    font-family: "Roboto", sans-serif;
-    font-size: 20px;
-    font-weight: 900;
-    cursor: pointer;
-    transition: 0.3s;
+    background: rgb(17, 0, 172) 50%;
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.50);
 }
 
@@ -86,12 +58,76 @@
     font-family: "Roboto", sans-serif;
 }
 
-.submit {
+.hide {
+    display: none
+}
+
+.question-wrapper .number {
+    color: #000000;
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .answer-wrapper .answer {
+    width: 100%;
+    height: 60px;
+    padding: 20px;
+    background-color: rgb(76, 156, 30);
+    border-radius: 10px;
+    border: 3px solid #3f4868;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: black;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.3s linear;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.50);
+  }
+  .answer .checkbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid #3f4868;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+  }
+  .answer .checkbox i {
+    color: #fff;
+    font-size: 10px;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+  .answer:hover:not(.checked) .checkbox,
+  .answer.selected .checkbox {
+    background-color: #0c80ef;
+    border-color: #0c80ef;
+  }
+  .answer.selected .checkbox i {
+    opacity: 1;
+  }
+  .answer.correct {
+      border-color: #0cef2a;
+  }
+  .answer.wrong {
+    border-color: #fc3939;
+  }
+  .question-wrapper,
+  .answer-wrapper {
+    margin-bottom: 50px;
+  }
+  .btn {
     padding: 10px 20px;
-    width: 30vh;
+    width: 440px;
     height: 50px;
     border: none;
-    border-radius: 10px;
+    border-radius: 100px;
     font-family: "Roboto", sans-serif;
     background-color: rgb(76, 156, 30);
     color: black;
@@ -100,6 +136,65 @@
     cursor: pointer;
     transition: 0.3s;
     box-shadow: 0px 7px 7px 0px rgba(0, 0, 0, 0.50);
-}
+  }
+  .btn:hover {
+    background: #0a6bc5;
+  }
+  .btn:disabled {
+    background: #576081;
+    cursor: not-allowed;
+  }
+  .btn.next {
+    display: none;
+  }
+  
+  .end-screen .score {
+    color: #000000;
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 80px;
+    text-align: center;
+  }
+  .score .score-text {
+    color: #000000;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 120px;
+  }
 
-
+  .timer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  .timer .progress {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    border-radius: 30px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border: 3px solid #3f4868;
+  }
+  .timer .progress .progress-bar {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    background: linear-gradient(to right, #011f5f, #9078ff);
+    transition: 1s linear;
+  }
+  .timer .progress .progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000000;
+    font-size: 16px;
+    font-weight: 500;
+  }
