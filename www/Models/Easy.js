@@ -9,7 +9,7 @@ const progress = (value) => {
   progressText.innerHTML = `${value}`; // Actualiza el texto de progreso mostrando el tiempo restante
 };
 
-// Declaración de variables
+// Declaración de variables (solo es de prueba)
 let questions = [],
   time = 0,
   score = 0,
