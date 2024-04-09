@@ -21,6 +21,14 @@ function login(formData) {
     });
 }
 
+function logout() {
+    removeLocalStorageValue("id_user")
+    removeLocalStorageValue("name")
+    removeLocalStorageValue("last_name")
+    removeLocalStorageValue("email")
+    removeLocalStorageValue("coins")
+}
+
 function signup(formData) {
     $.ajax({
         url: signupUser_route,
@@ -43,6 +51,23 @@ function signup(formData) {
             console.error('Error:', textStatus, errorThrown);
         }
     });
+}
+
+function editUser(formData) {
+    $.ajax({
+        url: postUser_route + getLocalStorageValue("id_user"),
+        method: 'PUT',
+        contentType: 'application/json',
+        data: JSON.stringify(formData),
+        success: function(response) {
+            console.table(response)
+
+            getUserData(getLocalStorageValue("id_user"), "edit");
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.error('Error:', textStatus, errorThrown);
+        }
+    });        
 }
 
 function getUserData(id, func = null) {

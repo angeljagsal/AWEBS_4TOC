@@ -64,7 +64,6 @@
         var userPassword = $('#user-password').val();
 
         var formData = {
-            // id_user: 10, // MUST CHANGE. ID MUST BE AUTOMATIC
             name: userName,
             last_name: userLastname,
             email: userEmail,
@@ -74,10 +73,10 @@
         console.log(formData)
 
         signup(formData);
+        alert("Registro completado. Ahora puedes iniciar sesión con tus credenciales!")
+        LoadPartialView('/login', document.querySelector('.app'));
     });
-</script>
 
-<script>
     document.querySelector('.goLogin').addEventListener('click', function() {
         LoadPartialView('/login', document.querySelector('.app'))
     })

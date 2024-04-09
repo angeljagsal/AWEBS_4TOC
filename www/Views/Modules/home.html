@@ -37,9 +37,16 @@
 </div>
 
 <script>
-    document.querySelector('.goUser').addEventListener('click', function() {
-        LoadPartialView('/login', document.querySelector('.app'))
-    })
+    if(getLocalStorageValue("id_user") == null) {
+        document.querySelector('.goUser').addEventListener('click', function() {
+            LoadPartialView('/login', document.querySelector('.app'))
+        })  
+    } else {
+        document.querySelector('.goUser').addEventListener('click', function() {
+            LoadPartialView('/user_profile', document.querySelector('.app'))
+        })  
+    }
+
     document.querySelector('.game').addEventListener('click', function(){
         LoadPartialView('/game', document.querySelector('.app'))
     })

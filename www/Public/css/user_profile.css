@@ -48,4 +48,10 @@
 .showCoins {
     font-weight: 500;
 }
-  
+
+.container {
+    .logoutBtn {
+        font-weight: 500;
+        margin-top: 20rem;
+    }   
+}
