@@ -22,23 +22,23 @@
     
     <div class="container">
         <div class="OpDiv mt-4 mb-3">
-            <div class="1">
+            <div class="easy">
                 <i class="bi bi-play-fill"></i>
-                <h3>Category</h3>
+                <h3>Easy</h3>
             </div>
         </div>
     
         <div class="OpDiv my-3">
-            <div class="game">
+            <div class="medium">
                 <i class="bi bi-play-fill"></i>
-                <h3>Category</h3>
+                <h3>Medium</h3>
             </div>
         </div>
     
         <div class="OpDiv my-3">
-            <div class="game">
+            <div class="hard">
                 <i class="bi bi-play-fill"></i>
-                <h3>Category</h3>
+                <h3>Hard</h3>
             </div>
         </div>
     </div>
@@ -53,10 +53,22 @@
                 LoadPartialView('/user_profile', document.querySelector('.app'))
             })  
         }
-    
-        document.querySelector('.game').addEventListener('click', function(){
-            LoadPartialView('/game', document.querySelector('.app'))
-        })
+        
+    document.querySelector('.easy').addEventListener('click', function(){
+        // Cambiar el valor de diff a 'easy'
+    diff = 'easy';
+        LoadPartialView('/game', document.querySelector('.app'));
+    })
+    document.querySelector('.medium').addEventListener('click', function(){
+        // Cambiar el valor de diff a 'medium'
+        diff = 'medium';
+        LoadPartialView('/game', document.querySelector('.app'));
+    })
+    document.querySelector('.hard').addEventListener('click', function(){
+        // Cambiar el valor de diff a 'hard'
+        diff = 'hard';
+        LoadPartialView('/game', document.querySelector('.app'));
+    })
     </script>
 
 </body>

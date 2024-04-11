@@ -18,7 +18,7 @@ const startQuiz = () => {
     //     cat = category.value,
     //     diff = difficulty.value;
 
-    const url = `https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple`;
+    const url = `https://opentdb.com/api.php?amount=10&category=18&difficulty=${diff}&type=multiple`;
     // const url = `https://opentdb.com/api.php?amount=${num}&category=${cat}&difficulty=${diff}&type=multiple`;
 
     fetch(url)
@@ -103,6 +103,7 @@ submitBtn.addEventListener("click", () => {
 });
 
 const checkAnswer = () => {
+    clearInterval(timer); // Detener temporizador
     const selectedAnswer = document.querySelector(".answer.selected");
     if (selectedAnswer) {
         const answer = selectedAnswer.querySelector(".text").innerHTML;
