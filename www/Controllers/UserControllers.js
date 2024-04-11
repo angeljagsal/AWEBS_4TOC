@@ -11,6 +11,8 @@ function login(formData) {
             saveLocalStorageValue("last_name", response.value.last_name);
             saveLocalStorageValue("email", response.value.email);
             saveLocalStorageValue("coins", response.value.coins);
+            saveLocalStorageValue("password", response.value.password);
+            saveLocalStorageValue("score", response.score);
 
             // console.log('ID de usuario:', getLocalStorageValue("id_user"));
             LoadPartialView('/user_profile', document.querySelector('.app'))
@@ -27,6 +29,8 @@ function logout() {
     removeLocalStorageValue("last_name")
     removeLocalStorageValue("email")
     removeLocalStorageValue("coins")
+    removeLocalStorageValue("password")
+    removeLocalStorageValue("score")
 }
 
 function signup(formData) {

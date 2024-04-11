@@ -2,10 +2,15 @@
 @import url('bootstrap-icons/font/bootstrap-icons.css');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
 
+.container {
+    margin-top: 1.5rem;
+    margin-bottom: 5px;
+}
+
 .rectangle {
     background-color: rgb(76, 156, 30);;
-    width: 440px;
-    height: 110px;
+    width: 100%;
+    height: 120px;
     flex-shrink: 0;
     border-bottom-left-radius: 60%;
     border-bottom-right-radius: 60%;
@@ -31,8 +36,8 @@
     color: black;
 }
 
-.questionBox {
-    margin: 40px 0;
+/* .questionBox {
+    margin-block: 10px 45px;
     width: 42vh;
     height: 152px;
     flex-shrink: 0;
@@ -43,6 +48,10 @@
     border: 2.5px solid #000;
     background: lightgray 50%;
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.50);
+} */
+
+.questionBox {
+    margin-block: auto 1rem;
 }
 
 .questionBox p {
@@ -58,14 +67,14 @@
 }
 
 .answer-wrapper {
-    width: 80%;
+    width: 82vw;
     margin: 0 auto;
 }
 
 .answer {
     width: 100%;
-    height: 60px;
-    padding: 20px;
+    /* height: 60px; */
+    padding-inline: 15px;
     border-radius: 10px;
     color: black;
     border: 3px solid #3f4868;
@@ -75,6 +84,11 @@
     margin-bottom: 20px;
     cursor: pointer;
     transition: 0.3s linear;
+    font-size: 14px;
+    .text {
+        max-width: 80%;
+        padding-block: 1rem;
+    }
 }
 
 .answer .checkbox {
@@ -132,7 +146,7 @@
 }
 
 .submit, .next {
-    margin-top: 3rem;
+    margin-top: 1rem;
     padding: 10px 20px;
     width: 30vh;
     height: 50px;
@@ -140,10 +154,71 @@
     border-radius: 10px;
     font-family: "Roboto", sans-serif;
     background-color: rgb(76, 156, 30);
-    color: black;
+    color: white;
     font-size: 20px;
     font-weight: 900;
     cursor: pointer;
     transition: 0.3s;
     box-shadow: 0px 7px 7px 0px rgba(0, 0, 0, 0.50);
+}
+
+/* END SCREEN */
+
+.end-screen {
+    display: none;
+}
+
+.score {
+    margin-top: 5rem;
+    color: #000000;
+    font-size: 32px;
+    font-weight: 500;
+    text-align: center;
+    .score-text {
+        color: #000000;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    button {
+        margin: 5rem auto;
+    }
+}
+
+.timer {
+    margin-block: 30px 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.timer .progress {
+    position: relative;
+    width: 80%;
+    height: 2rem;
+    background: transparent;
+    border-radius: 30px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border: 3px solid #3f4868;
+}
+
+.timer .progress .progress-bar {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    background: linear-gradient(to right, #011f5f, #9078ff);
+    transition: 1s linear;
+}
+
+.timer .progress .progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000000;
+    font-size: 16px;
+    font-weight: 500;
 }

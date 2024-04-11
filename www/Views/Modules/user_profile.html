@@ -14,9 +14,7 @@
     <div class="avatar" data-label=""> <!-- Iniciales asignadas con JS --> </div>
     <p class="user-name"> <!-- Nombre asignado con JS --> </p>
     <p class="showCoins"> <!-- Coins mostradas con JS --> </p>
-    <button class="logoutBtn btn btn-danger" id="logout">
-        Logout
-    </button>
+    <button class="logoutBtn btn btn-danger" id="logout">Logout</button>
 </div>
 
 
@@ -58,31 +56,5 @@
     document.getElementById("logout").onclick = function() {
         logout();
         LoadPartialView('/home', document.querySelector('.app'))
-    }
-
-    console.log(getLocalStorageValue("coins"))
-
-    coinsValue = parseInt(getLocalStorageValue("coins"));
-
-    if (!isNaN(coinsValue)) {
-        coinsValue += 10;
-
-        window.localStorage.setItem("coins", coinsValue.toString());
-
-        console.log("Nuevo valor de 'coins':", coinsValue);
-        
-        var formData = {
-            user_id: parseInt(getLocalStorageValue("id_user")),
-            email: getLocalStorageValue("email"),
-            name: getLocalStorageValue("name"),
-            last_name: getLocalStorageValue("last_name"),
-            password: getLocalStorageValue("password"),
-            score: getLocalStorageValue("score"),
-            coins: coinsValue
-        }
-
-        editUser(formData)
-    } else {
-        console.error("El valor de 'coins' no es un número válido.");
     }
 </script>

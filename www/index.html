@@ -38,12 +38,6 @@
         <script src="Public/js/@popperjs/core/dist/umd/popper.min.js"></script>
         <script src="Public/js/jquery-3.2.1.min.js"></script>
         
-        <script src="Controllers/Routes.js"></script>
-        <script src="Controllers/UserControllers.js"></script>
-        <!-- <script src="Controllers/GameControllers.js"></script> -->
-
-        <script src="Models/User.js"></script>
-
         <link rel="stylesheet" href="Public/css/home.css">
         <link rel="stylesheet" href="Public/css/login.css">
         <link rel="stylesheet" href="Public/css/register.css">
@@ -51,6 +45,10 @@
         <link rel="stylesheet" href="Public/css/user_profile.css">
         <link rel="stylesheet" href="Public/css/index.css">
         <!-- <link rel="stylesheet" href="Public/css/style.css"> -->
+        
+        <script src="Controllers/Routes.js"></script>
+        <script src="Controllers/UserControllers.js"></script>
+        <!-- <script src="Controllers/GameControllers.js"></script> -->
 
         <title>Hello World</title>
     </head>
@@ -61,7 +59,7 @@
         <!-- <script src="cordova.js"></script> -->
         <script src="Public/js/index.js"></script>
         <script>
-            LoadPartialView('/user_profile', document.querySelector('.app'))
+            LoadPartialView('/home', document.querySelector('.app'))
         </script>
     </body>
 </html>

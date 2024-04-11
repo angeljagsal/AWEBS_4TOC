@@ -1,0 +1,34 @@
+    var coinsValue = parseInt(getLocalStorageValue("coins"));
+    var dataEmail = getLocalStorageValue("email");
+    var dataName = getLocalStorageValue("name");
+    var dataLastname = getLocalStorageValue("last_name");
+    var dataPassword = getLocalStorageValue("password");
+    var dataScore = getLocalStorageValue("score");
+
+    console.log(dataEmail);
+    console.log(dataName);
+    console.log(dataLastname);
+    console.log(dataPassword);
+    console.log(dataScore);
+
+    if (!isNaN(coinsValue)) {
+        coinsValue += 10;
+
+        window.localStorage.setItem("coins", coinsValue.toString());
+
+        console.log("Nuevo valor de 'coins':", coinsValue);
+
+        var formData = {
+            id_user: parseInt(getLocalStorageValue("id_user")),
+            email: dataEmail,
+            name: dataName,
+            last_name: dataLastname,
+            password: dataPassword,
+            // score: dataScore,
+            coins: coinsValue
+        }
+
+        editUser(formData)
+    } else {
+        console.error("El valor de 'coins' no es un número válido.");
+    }

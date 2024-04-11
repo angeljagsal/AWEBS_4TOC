@@ -1,27 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-    <script src="Controllers/GameControllers.js"></script>
-        
-</head>
-<body>
-    <button class="start">start</button>
-    <div class="container">
-        <div class="rectangle">
-        <h1>Category</h1>
-    </div>
+<div class="rectangle">
+    <h1>Category</h1>
+</div>
+
+<div class="quiz hide">
+
+    <div class="timer">
+        <div class="progress">
+            <div class="progress-bar"></div>
+            <span class="progress-text"></span>
+        </div>
     </div>
 
     <div class="container">
+        <div class="number">
+            Question <span class="current">1</span>
+            <span class="total">/10</span>
+        </div>
         <div class="questionBox">
             <p class="question"></p>
         </div>
     </div>
-
+    
     <div class="answer-wrapper">
         <div class="answer selected">
             <span class="text">answer</span>
@@ -30,25 +29,23 @@
             </span>
         </div>
     </div>    
-
+    
     <div class="sendBtn">
         <button class="btn submit">Submit</button>
-    </div>
-
-    <div class="nextBtn">
         <button class="btn next">Next</button>
     </div>
+    
+</div>
 
-    <script>
-        document.querySelector('.answer-wrapper').addEventListener('click', function(event) {
-            const clickedAnswer = event.target.closest('.answer');
-            if (clickedAnswer) {
-                document.querySelectorAll('.answer').forEach(function(answer) {
-                    answer.classList.remove('selected');
-                });
-                clickedAnswer.classList.add('selected');
-            }
-        });
-    </script>
-</body>
-</html>
+<div class="end-screen">
+    <div class="score">
+        <span class="score-text">Your Score:</span>
+            <div>
+                <span class="final-score">0</span>
+                <span class="total-score">/10</span>
+            </div>
+        <button class="btn btn-danger restart">Go home</button>
+    </div>
+ </div>
+
+<script src="Controllers/GameControllers.js"></script>

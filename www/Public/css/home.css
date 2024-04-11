@@ -10,7 +10,7 @@
     --sq-txt-color: #ffffff;
     --shadow-color: #888888;
     --gradient-color: linear-gradient(to right, rgb(93, 182, 42), rgb(51, 147, 128)); 
-    --logReg-color: green;
+    --logReg-color: green;  
 }
 
 body {

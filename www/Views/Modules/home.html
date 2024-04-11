@@ -1,53 +1,63 @@
-<div class="txt mt-5 ms-4">
-    <div class="row mx-0">
-        <div class="col">
-            <h1><strong>Welcome!</strong></h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="txt mt-5 ms-4">
+        <div class="row mx-0">
+            <div class="col">
+                <h1><strong>Welcome!</strong></h1>
+            </div>
+            <div class="col icon text-end">
+                <a class="goUser">
+                    <i class="bi bi-person-circle"></i>
+                </a>
+            </div>
         </div>
-        <div class="col icon text-end">
-            <a class="goUser">
-                <i class="bi bi-person-circle"></i>
-            </a>
-        </div>
+        <p class="tKnow">Test Your Knowledge</p>
     </div>
-    <p class="tKnow">Test Your Knowledge</p>
-</div>
-<div class="container">
-    <div class="OpDiv mt-4 mb-3">
-        <div>
+    
+    <div class="container">
+        <div class="OpDiv mt-4 mb-3">
+            <div class="1">
+                <i class="bi bi-play-fill"></i>
+                <h3>Category</h3>
+            </div>
+        </div>
+    
+        <div class="OpDiv my-3">
             <div class="game">
                 <i class="bi bi-play-fill"></i>
                 <h3>Category</h3>
             </div>
         </div>
-        
-    </div>
-    <div class="OpDiv my-3">
-        <div class="game">
-        <i class="bi bi-play-fill"></i>
-            <h3>Category</h3>
+    
+        <div class="OpDiv my-3">
+            <div class="game">
+                <i class="bi bi-play-fill"></i>
+                <h3>Category</h3>
+            </div>
         </div>
-
     </div>
-    <div class="OpDiv my-3">
-        <div class="game">
-        <i class="bi bi-play-fill"></i>
-        <h3>Category</h3>
-    </div>
-    </div>
-</div>
 
-<script>
-    if(getLocalStorageValue("id_user") == null) {
-        document.querySelector('.goUser').addEventListener('click', function() {
-            LoadPartialView('/login', document.querySelector('.app'))
-        })  
-    } else {
-        document.querySelector('.goUser').addEventListener('click', function() {
-            LoadPartialView('/user_profile', document.querySelector('.app'))
-        })  
-    }
+    <script>
+        if(getLocalStorageValue("id_user") == null) {
+            document.querySelector('.goUser').addEventListener('click', function() {
+                LoadPartialView('/login', document.querySelector('.app'))
+            })  
+        } else {
+            document.querySelector('.goUser').addEventListener('click', function() {
+                LoadPartialView('/user_profile', document.querySelector('.app'))
+            })  
+        }
+    
+        document.querySelector('.game').addEventListener('click', function(){
+            LoadPartialView('/game', document.querySelector('.app'))
+        })
+    </script>
 
-    document.querySelector('.game').addEventListener('click', function(){
-        LoadPartialView('/game', document.querySelector('.app'))
-    })
-</script>
+</body>
+</html>
