@@ -14,8 +14,6 @@ var questions = [],
   timer;
 
 const startQuiz = () => {
-    // const num = numQuestions.value,
-    //     cat = category.value,
     //     diff = difficulty.value;
 
     const url = `https://opentdb.com/api.php?amount=10&category=18&difficulty=${diff}&type=multiple`;

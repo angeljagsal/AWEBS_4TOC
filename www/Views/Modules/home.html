@@ -1,62 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="txt mt-5 ms-4">
-        <div class="row mx-0">
-            <div class="col">
-                <h1><strong>Welcome!</strong></h1>
-            </div>
-            <div class="col icon text-end">
-                <a class="goUser">
-                    <i class="bi bi-person-circle"></i>
-                </a>
-            </div>
+<div class="txt mt-5 ms-4">
+    <div class="row mx-0">
+        <div class="col">
+            <h1><strong>Welcome!</strong></h1>
         </div>
-        <p class="tKnow">Test Your Knowledge</p>
+        <div class="col icon text-end">
+            <a class="goUser">
+                <i class="bi bi-person-circle"></i>
+            </a>
+        </div>
     </div>
-    
-    <div class="container">
-        <div class="OpDiv mt-4 mb-3">
-            <div class="easy">
-                <i class="bi bi-play-fill"></i>
-                <h3>Easy</h3>
-            </div>
-        </div>
-    
-        <div class="OpDiv my-3">
-            <div class="medium">
-                <i class="bi bi-play-fill"></i>
-                <h3>Medium</h3>
-            </div>
-        </div>
-    
-        <div class="OpDiv my-3">
-            <div class="hard">
-                <i class="bi bi-play-fill"></i>
-                <h3>Hard</h3>
-            </div>
+    <p class="tKnow">Test Your Knowledge</p>
+</div>
+
+<div class="container">
+    <div class="OpDiv mt-4 mb-3">
+        <div class="easy">
+            <i class="bi bi-play-fill"></i>
+            <h3>Easy</h3>
         </div>
     </div>
 
-    <script>
-        if(getLocalStorageValue("id_user") == null) {
-            document.querySelector('.goUser').addEventListener('click', function() {
-                LoadPartialView('/login', document.querySelector('.app'))
-            })  
-        } else {
-            document.querySelector('.goUser').addEventListener('click', function() {
-                LoadPartialView('/user_profile', document.querySelector('.app'))
-            })  
-        }
-        
+    <div class="OpDiv my-3">
+        <div class="medium">
+            <i class="bi bi-play-fill"></i>
+            <h3>Medium</h3>
+        </div>
+    </div>
+
+    <div class="OpDiv my-3">
+        <div class="hard">
+            <i class="bi bi-play-fill"></i>
+            <h3>Hard</h3>
+        </div>
+    </div>
+</div>
+
+<script>
+    if(getLocalStorageValue("id_user") == null) {
+        document.querySelector('.goUser').addEventListener('click', function() {
+            LoadPartialView('/login', document.querySelector('.app'))
+        })  
+    } else {
+        document.querySelector('.goUser').addEventListener('click', function() {
+            LoadPartialView('/user_profile', document.querySelector('.app'))
+        })  
+    }
+    
     document.querySelector('.easy').addEventListener('click', function(){
         // Cambiar el valor de diff a 'easy'
-    diff = 'easy';
+        diff = 'easy';
         LoadPartialView('/game', document.querySelector('.app'));
     })
     document.querySelector('.medium').addEventListener('click', function(){
@@ -69,7 +61,4 @@
         diff = 'hard';
         LoadPartialView('/game', document.querySelector('.app'));
     })
-    </script>
-
-</body>
-</html>
+</script>
