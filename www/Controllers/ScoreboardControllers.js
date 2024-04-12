@@ -6,7 +6,8 @@ function showScoreboard() {
         success: function(data) {
             var scoreboardDiv = $('#scoreboard');
             $.each(data, function(index, score) {
-                scoreboardDiv.append('<p>' + score.Username + ': ' + score.Score + '</p>');
+                var position = index + 1;
+                scoreboardDiv.append('<p>' + position + '. ' + score.Username + ': ' + score.Score + '</p>');
             });
         },
         error: function(xhr, textStatus, errorThrown) {
