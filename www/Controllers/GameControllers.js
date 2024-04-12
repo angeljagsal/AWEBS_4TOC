@@ -144,7 +144,8 @@ const nextQuestion = () => {
       showQuestion(questions[currentQuestion - 1]);
     } else {
       showScore();
-      addCoins();
+    //   addCoins();
+      addScore();
     }
   };
 
@@ -171,20 +172,18 @@ const addCoins = () => {
   var dataName = getLocalStorageValue("name");
   var dataLastname = getLocalStorageValue("last_name");
   var dataPassword = getLocalStorageValue("password");
-  // var dataScore = getLocalStorageValue("score");
+  var dataScore = getLocalStorageValue("score");
 
   console.log(coinsValue)
   console.log(dataEmail)
   console.log(dataName)
   console.log(dataLastname)
   console.log(dataPassword)
+  console.log(dataScore)
   
   if (!isNaN(coinsValue)) {
       coinsValue += score;
-  
-      console.log(`Earned coins: ${score}`)
-      console.log(`Coins: ${coinsValue}`)
-  
+
       window.localStorage.setItem("coins", coinsValue.toString());
   
       console.log("Nuevo valor de 'coins':", coinsValue);
@@ -195,7 +194,7 @@ const addCoins = () => {
           name: dataName,
           last_name: dataLastname,
           password: dataPassword,
-          score: null,
+          score: dataScore,
           coins: coinsValue
       }
       editUser(formData)
@@ -203,6 +202,47 @@ const addCoins = () => {
       console.error("El valor de 'coins' no es un número válido.");
   }
 }
+
+const addScore = () => {
+    var coinsValue = parseInt(getLocalStorageValue("coins"));
+    var dataEmail = getLocalStorageValue("email");
+    var dataName = getLocalStorageValue("name");
+    var dataLastname = getLocalStorageValue("last_name");
+    var dataPassword = getLocalStorageValue("password");
+    var dataScore = getLocalStorageValue("score");
+
+    console.log(score)
+
+    if (Number.isNaN(dataScore)) {
+        dataScore = 0;
+    }
+  
+    console.log(coinsValue);
+    console.log(dataEmail);
+    console.log(dataName);
+    console.log(dataLastname);
+    console.log(dataPassword);
+    console.log(dataScore);
+    
+    if (score > 1) {
+        var addScore = dataScore++;
+        console.log(addScore)
+
+        window.localStorage.setItem("score", addScore.toString());
+        var formData = {
+            id_user: parseInt(getLocalStorageValue("id_user")),
+            email: dataEmail,
+            name: dataName,
+            last_name: dataLastname,
+            password: dataPassword,
+            score: addScore,
+            coins: coinsValue
+        }
+        editUser(formData)
+    } else {
+        console.error("El valor de 'score' no es un número válido.");
+    }
+  }
 
 //clic reiniciar
 const restartBtn = document.querySelector(".restart");

@@ -54,12 +54,12 @@
     document.querySelector('.btn-login-form').addEventListener('click', function () {
         var userEmail = $('#user-email').val();
         var userPassword = $('#user-password').val();
-        var userType = $('#user-type').val();
+        // var userType = $('#user-type').val();
 
         var formData = {
             email: userEmail,
             password: userPassword,
-            type: userType
+            // type: userType
         };
 
         login(formData);
