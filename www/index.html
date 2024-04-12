@@ -48,18 +48,22 @@
         
         <script src="Controllers/Routes.js"></script>
         <script src="Controllers/UserControllers.js"></script>
+        <script src="Controllers/ScoreboardControllers.js"></script>
         <!-- <script src="Controllers/GameControllers.js"></script> -->
 
         <title>Hello World</title>
     </head>
     <body>
         <div class="app">
-            
         </div>
         <!-- <script src="cordova.js"></script> -->
         <script src="Public/js/index.js"></script>
         <script>
-            LoadPartialView('/home', document.querySelector('.app'))
+            showScoreboard()
+        </script>
+        <script>
+            LoadPartialView('/scoreboard', document.querySelector('.app'))
+            
         </script>   
     </body>
 </html>

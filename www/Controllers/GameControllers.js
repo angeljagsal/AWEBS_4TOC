@@ -164,44 +164,36 @@ finalScore.innerHTML = score; // Mostrar puntuación final
 totalScore.innerHTML = `/ ${questions.length}`; // Mostrar el número total de preguntas
 };
 
+var coinsValue = parseInt(getLocalStorageValue("coins"));
+var dataEmail = getLocalStorageValue("email");
+var dataName = getLocalStorageValue("name");
+var dataLastname = getLocalStorageValue("last_name");
+var dataPassword = getLocalStorageValue("password");
+var dataScore = getLocalStorageValue("score");
 
 // Añadir monedas dependiendo del score
-const addCoins = () => {
-  var coinsValue = parseInt(getLocalStorageValue("coins"));
-  var dataEmail = getLocalStorageValue("email");
-  var dataName = getLocalStorageValue("name");
-  var dataLastname = getLocalStorageValue("last_name");
-  var dataPassword = getLocalStorageValue("password");
-  var dataScore = getLocalStorageValue("score");
+// const addCoins = () => {
+//   if (!isNaN(coinsValue)) {
+//       coinsValue += score;
 
-  console.log(coinsValue)
-  console.log(dataEmail)
-  console.log(dataName)
-  console.log(dataLastname)
-  console.log(dataPassword)
-  console.log(dataScore)
+//       window.localStorage.setItem("coins", coinsValue.toString());
   
-  if (!isNaN(coinsValue)) {
-      coinsValue += score;
-
-      window.localStorage.setItem("coins", coinsValue.toString());
+//       console.log("Nuevo valor de 'coins':", coinsValue);
   
-      console.log("Nuevo valor de 'coins':", coinsValue);
-  
-      var formData = {
-          id_user: parseInt(getLocalStorageValue("id_user")),
-          email: dataEmail,
-          name: dataName,
-          last_name: dataLastname,
-          password: dataPassword,
-          score: dataScore,
-          coins: coinsValue
-      }
-      editUser(formData)
-  } else {
-      console.error("El valor de 'coins' no es un número válido.");
-  }
-}
+//       var formData = {
+//           id_user: parseInt(getLocalStorageValue("id_user")),
+//           email: dataEmail,
+//           name: dataName,
+//           last_name: dataLastname,
+//           password: dataPassword,
+//           score: dataScore,
+//           coins: coinsValue
+//       }
+//       editUser(formData)
+//   } else {
+//       console.error("El valor de 'coins' no es un número válido.");
+//   }
+// }
 
 const addScore = () => {
     var coinsValue = parseInt(getLocalStorageValue("coins"));
@@ -209,40 +201,27 @@ const addScore = () => {
     var dataName = getLocalStorageValue("name");
     var dataLastname = getLocalStorageValue("last_name");
     var dataPassword = getLocalStorageValue("password");
-    var dataScore = getLocalStorageValue("score");
+    var dataScore = parseInt(getLocalStorageValue("score"));
 
-    console.log(score)
+    if (!isNaN(dataScore)) {
+        var newScore = dataScore + 1;
 
-    if (Number.isNaN(dataScore)) {
-        dataScore = 0;
-    }
-  
-    console.log(coinsValue);
-    console.log(dataEmail);
-    console.log(dataName);
-    console.log(dataLastname);
-    console.log(dataPassword);
-    console.log(dataScore);
-    
-    if (score > 1) {
-        var addScore = dataScore++;
-        console.log(addScore)
+        window.localStorage.setItem("score", newScore);
 
-        window.localStorage.setItem("score", addScore.toString());
         var formData = {
             id_user: parseInt(getLocalStorageValue("id_user")),
             email: dataEmail,
             name: dataName,
             last_name: dataLastname,
             password: dataPassword,
-            score: addScore,
+            score: newScore,
             coins: coinsValue
         }
-        editUser(formData)
+        editUser(formData);
     } else {
         console.error("El valor de 'score' no es un número válido.");
     }
-  }
+}
 
 //clic reiniciar
 const restartBtn = document.querySelector(".restart");

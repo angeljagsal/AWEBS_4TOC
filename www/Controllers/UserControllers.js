@@ -12,7 +12,14 @@ function login(formData) {
             saveLocalStorageValue("email", response.value.email);
             saveLocalStorageValue("coins", response.value.coins);
             saveLocalStorageValue("password", response.value.password);
-            saveLocalStorageValue("score", response.score);
+            // saveLocalStorageValue("score", response.score);
+
+            var scoreFromResponse = response.value.score;
+            if (scoreFromResponse !== undefined && !isNaN(scoreFromResponse)) {
+                saveLocalStorageValue("score", scoreFromResponse);
+            } else {
+                saveLocalStorageValue("score", 0);
+            }
 
             // console.log('ID de usuario:', getLocalStorageValue("id_user"));
             LoadPartialView('/user_profile', document.querySelector('.app'))
