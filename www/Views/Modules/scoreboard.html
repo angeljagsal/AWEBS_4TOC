@@ -5,11 +5,15 @@
     <div class="background">
         <h1 class="lb">Leaderboard</h1>
     </div>
+    <div class="info">
+        <h3>This leaderboard shows the users who have completed a quiz with perfect score the most times. Challenge yourself for that first place! </h3>
+    </div>
     <div id="scoreboard" class="scoreboard"></div>
 </div>
 
 <script>
     document.querySelector('.goProfile').addEventListener('click', () => {
-        LoadPartialView('/user_profile', document.querySelector('.app'))
+        LoadPartialView('/home', document.querySelector('.app'))
     })
+    showScoreboard()
 </script>

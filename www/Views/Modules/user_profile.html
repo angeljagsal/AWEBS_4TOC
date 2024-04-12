@@ -3,17 +3,22 @@
         <div class="col arrowHomeUP">
             <i class="goHome bi bi-arrow-left"></i>
         </div>
-        <div class="col coinsUP">
+        <!-- <div class="col coinsUP">
             <i class="bi bi-coin"></i>
             <p class="showCoins"></p>
-        </div>
+        </div> -->
     </div>
 </div>
 
 <div class="container">
     <div class="avatar" data-label=""> <!-- Iniciales asignadas con JS --> </div>
     <p class="user-name"> <!-- Nombre asignado con JS --> </p>
-    <p class="showCoins"> <!-- Coins mostradas con JS --> </p>
+    <div class="OpLead">
+        <div class="goLead">
+            <i class="bi bi-trophy">  <h3>Leaderboard</h3></i>
+        </div>
+</div>
+    <!-- <p class="showCoins">  Coins mostradas con JS --> </p>
     <button class="logoutBtn btn btn-danger" id="logout">Logout</button>
 </div>
 
@@ -22,7 +27,7 @@
 
     userName = getLocalStorageValue("name");
     userLastname = getLocalStorageValue("last_name");
-    userCoins = getLocalStorageValue("coins");
+    // userCoins = getLocalStorageValue("coins");
 
     firstLetters = userName.substr(0, 1) + userLastname.substr(0, 1)
 
@@ -34,7 +39,7 @@
     userNameElement.textContent = userName + " " + userLastname;
     }
 
-    document.querySelector(".showCoins").textContent = userCoins;
+    // document.querySelector(".showCoins").textContent = userCoins;
 
     avatars = document.querySelectorAll(".avatar");
 
@@ -47,14 +52,21 @@
         const blue = (red + green) % 200;
 
         a.style.background = `rgb(${red}, ${green}, ${blue})`;
-        });
+    });
 
     document.querySelector('.goHome').addEventListener('click', function() {
         LoadPartialView('/home', document.querySelector('.app'))
     })
 
+    document.querySelector('.goLead').addEventListener('click', function() {
+            LoadPartialView('/scoreboard', document.querySelector('.app'))
+        }) 
+
     document.getElementById("logout").onclick = function() {
         logout();
         LoadPartialView('/home', document.querySelector('.app'))
-    }
+    }
+
+
 </script>
+
