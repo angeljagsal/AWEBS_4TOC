@@ -1,8 +1,8 @@
 //Declare environment
 const local_server = "https://localhost:44316/api/";
-const public_server = "";
+const public_server = "https://triviaapp.bsite.net/";
 
-const env = local_server;
+const env = public_server;
 
 //Users API
 const loginUser_route = env + "Users/login"
