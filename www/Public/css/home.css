@@ -9,7 +9,7 @@
     --grayt-color: #cdcdcd;
     --sq-txt-color: #ffffff;
     --shadow-color: #888888;
-    --gradient-color: linear-gradient(to right, rgb(93, 182, 42), rgb(51, 147, 128)); 
+    --gradient-color: linear-gradient(to right, rgb(93, 182, 42), #339380); 
     --logReg-color: green;  
 }
 
@@ -64,6 +64,37 @@ body {
         transition: box-shadow .2s linear;
     }
 }
+.OpLead {
+    background: var(--gradient-color);
+    box-shadow: 1px 1px 1px transparent;
+    border-radius: 3vh;
+    width: 55%;
+    height: 10vh;
+    margin-top: 4vh;
+    i {
+        font-size: 25px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2vh;
+        gap: 10px; ;
+        color: white;
+        h3{
+            margin-top: 1vh;
+        }
+    }
+    p {
+        padding-top: 45px;
+        padding-left: 20px;
+        color: var(--sq-txt-color);
+    }
+    &:hover {
+        box-shadow: 4px 4px 4px var(--shadow-color);
+        transition: box-shadow .2s linear;
+    }
+}
+
 
 .col.icon {
     color: var(--sbt-color);
