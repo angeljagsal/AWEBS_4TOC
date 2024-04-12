@@ -47,7 +47,7 @@
         const blue = (red + green) % 200;
 
         a.style.background = `rgb(${red}, ${green}, ${blue})`;
-    });
+        });
 
     document.querySelector('.goHome').addEventListener('click', function() {
         LoadPartialView('/home', document.querySelector('.app'))
@@ -56,5 +56,5 @@
     document.getElementById("logout").onclick = function() {
         logout();
         LoadPartialView('/home', document.querySelector('.app'))
-    }
+    }
 </script>

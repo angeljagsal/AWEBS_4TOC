@@ -1,3 +1,23 @@
 .lb {
     margin-block: 2rem 2rem;
+    font-size: 2rem;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+.background{
+    background: linear-gradient(to bottom, #5db62a, #339380);
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.goProfile{
+    color: black;
+    font-size: 35px;
+    position: absolute;
+    left: 2rem;
+    bottom: 87vh;
+    cursor: pointer;
 }

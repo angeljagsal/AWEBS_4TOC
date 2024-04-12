@@ -23,7 +23,7 @@ document.addEventListener('deviceready', onDeviceReady, false);
 
 function LoadPartialView(viewName, divClass = null) {
     $.ajax({
-        url: 'Views/Modules' + viewName + '.html',
+        url: '/Views/Modules' + viewName + '.html',
         method: 'GET',
         success: function(data) {
             $(divClass).html(data);
