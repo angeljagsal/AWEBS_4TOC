@@ -228,4 +228,3 @@ const restartBtn = document.querySelector(".restart");
 restartBtn.addEventListener("click", () => {
 window.location.reload(); // Recargar la página para reiniciar el quiz
 });
-
